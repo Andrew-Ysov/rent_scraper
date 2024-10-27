@@ -3,9 +3,9 @@
 import requests
 import csv
 from bs4 import BeautifulSoup
-from main import min_price, max_price
+from main import min_price, max_price, file_name
 
-FILENAME = 'offers.csv'
+FILENAME = file_name
 link = 'https://www.ligakvartir.ru/lugansk/snyat-nedvizhimost'
 
 headings = ['цена', 'ссылка', 'адрес']
