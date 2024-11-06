@@ -1,5 +1,6 @@
-# главный файл в котором будет работать парсер
+from ligakvartir_lug_parser import site_parse
+from vk_parse import post_parse
+from data_and_file_writer import site_link
 
-min_price = 8000
-max_price = 25000
-file_name = 'offers.csv'
+site_parse(site_link)
+post_parse()
