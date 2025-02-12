@@ -10,6 +10,9 @@ links = ['https://vk.com/arenda_lugansk1', 'https://vk.com/nedvizhimost_souz', '
 domains = [part.split('/')[-1] for part in links]
 
 
+# TODO: реализовать обработку постов с помощью regex для более точного парсинга
+
+
 def get_link(json_data, domain, num):
         # функция для получения ссылки на отдельный пост
         post_id = json_data['response']['items'][num]['id']
