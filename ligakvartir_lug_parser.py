@@ -1,4 +1,4 @@
-# файл для парсинга данных с сайта
+# файл для парсинга данных с сайта ligakvartir.ru
 
 import requests
 from bs4 import BeautifulSoup
@@ -40,3 +40,6 @@ def site_parse(LINK):
         offer = [price, url, adress]
 
         file_writer(offer)
+
+if __name__ == '__main__':
+    site_parse(LINK)
