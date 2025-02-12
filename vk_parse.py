@@ -7,13 +7,14 @@ from data_and_file_writer import min_price, max_price, num_of_posts, file_writer
 
 
 links = ['https://vk.com/arenda_lugansk1', 'https://vk.com/nedvizhimost_souz', 'https://vk.com/nedvizhimost_lnr1']
-
 domains = [part.split('/')[-1] for part in links]
+
 
 def get_link(json_data, domain, num):
         post_id = json_data['response']['items'][num]['id']
         owner_id = json_data['response']['items'][num]['from_id']
         return f'https://vk.com/{domain}?w=wall{owner_id}_{post_id}'
+
 
 def post_parse():
         for domain in domains:
@@ -39,6 +40,7 @@ def post_parse():
                         link = get_link(json_data, domain, num)
 
                         file_writer([price, link])
+
 
 if __name__ == '__main__':
         post_parse()

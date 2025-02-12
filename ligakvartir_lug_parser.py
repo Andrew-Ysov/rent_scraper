@@ -4,7 +4,9 @@ import requests
 from bs4 import BeautifulSoup
 from data_and_file_writer import min_price, max_price, file_writer
 
+
 LINK = 'https://www.ligakvartir.ru/lugansk/snyat-nedvizhimost'
+
 
 def site_parse(LINK):
     headings = ['цена', 'ссылка', 'адрес']
@@ -41,6 +43,7 @@ def site_parse(LINK):
         offer = [price, url, adress]
 
         file_writer(offer)
+
 
 if __name__ == '__main__':
     site_parse(LINK)
