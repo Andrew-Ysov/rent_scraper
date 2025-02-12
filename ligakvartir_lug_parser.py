@@ -9,6 +9,7 @@ LINK = 'https://www.ligakvartir.ru/lugansk/snyat-nedvizhimost'
 
 
 def site_parse(LINK):
+    # главная функция, созданная специально для парсинга сайта ligakvartir.ru
     headings = ['цена', 'ссылка', 'адрес']
     file_writer(headings)
 

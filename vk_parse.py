@@ -1,4 +1,4 @@
-# файл для парсинга данных из vk
+# файл для парсинга данных из групп в vk
 
 import requests
 import json
@@ -11,12 +11,14 @@ domains = [part.split('/')[-1] for part in links]
 
 
 def get_link(json_data, domain, num):
+        # функция для получения ссылки на отдельный пост
         post_id = json_data['response']['items'][num]['id']
         owner_id = json_data['response']['items'][num]['from_id']
         return f'https://vk.com/{domain}?w=wall{owner_id}_{post_id}'
 
 
 def post_parse():
+        # функция, которая парсит посты, обрабатывает их и записывает в файл
         for domain in domains:
                 count = num_of_posts
                 r= requests.get('https://api.vk.com/method/wall.get',
