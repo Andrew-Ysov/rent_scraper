@@ -33,7 +33,7 @@ def post_parse():
                         if not text:
                                 try: 
                                         text = json.dumps(json_data['response']['items'][num]
-                                                          ['copy_history'][-1]['text'], ensure_ascii= False)
+                                                          ['copy_history'][-1]['text'], ensure_ascii=False)
                                 except:
                                         text = ''
                         price = ''
