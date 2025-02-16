@@ -2,11 +2,9 @@
 
 import requests
 import json
+
 from vk_api_token import vk_api_token
-from data_and_file_writer import min_price
-from data_and_file_writer import max_price
-from data_and_file_writer import num_of_posts
-from data_and_file_writer import file_writer
+from data_and_file_writer import min_price, max_price, num_of_posts, file_writer
 
 
 links = ['https://vk.com/arenda_lugansk1', 'https://vk.com/nedvizhimost_souz', 'https://vk.com/nedvizhimost_lnr1']

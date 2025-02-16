@@ -2,6 +2,7 @@
 
 import requests
 from bs4 import BeautifulSoup
+
 from data_and_file_writer import min_price, max_price, file_writer
 
 
