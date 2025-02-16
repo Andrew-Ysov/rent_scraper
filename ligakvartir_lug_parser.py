@@ -2,9 +2,7 @@
 
 import requests
 from bs4 import BeautifulSoup
-from data_and_file_writer import min_price
-from data_and_file_writer import max_price
-from data_and_file_writer import  file_writer
+from data_and_file_writer import min_price, max_price, file_writer
 
 
 LINK = 'https://www.ligakvartir.ru/lugansk/snyat-nedvizhimost'
