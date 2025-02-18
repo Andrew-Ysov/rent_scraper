@@ -15,9 +15,9 @@ def site_parse(LINK):
     file_writer(headings)
 
     # опциональные хэдеры
-    # st_accept = "text/html"
-    # st_useragent = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 12_3_1)" 
-    #                 "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15")
+    # st_accept = 'text/html'
+    # st_useragent = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 12_3_1)' 
+    #                 'AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15')
 
     r = requests.get(LINK, headers={'User-Agent':'Custom'}, timeout=(5, 10))
 
@@ -25,7 +25,7 @@ def site_parse(LINK):
     elements = bs.find_all('div', class_='col-x col-lg-4 col-sm-6 col-xs-6')
     for element in elements:
 
-        price_and_currency = element.find('div', class_="price sale").span.string
+        price_and_currency = element.find('div', class_='price sale').span.string
         price = ''
         for i in price_and_currency:
             if i.isdigit():
