@@ -32,14 +32,14 @@ def site_parse(LINK):
                 price += i
         price = int(price)
 
-        if price > max_price or price < min_price:
+        if price>max_price or price<min_price:
             continue
 
         url = element.find('div', class_='object_title').a['href']
         adress = ''
         parts_of_adress = element.find('div', class_='object_desc city-rayon')
         for s in parts_of_adress.find_all('a', string=True):
-            adress+=s.string + ' '
+            adress += s.string + ' '
         
 
         offer = [price, url, adress]

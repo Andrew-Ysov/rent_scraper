@@ -25,7 +25,7 @@ def post_parse():
         # функция, которая парсит посты, обрабатывает их и записывает в файл
         for domain in domains:
                 count = num_of_posts
-                r= requests.get('https://api.vk.com/method/wall.get',
+                r = requests.get('https://api.vk.com/method/wall.get',
                         params= {'domain':domain,
                                 'count':count,
                                 'access_token':vk_api_token,
