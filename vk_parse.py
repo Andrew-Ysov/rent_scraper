@@ -1,4 +1,8 @@
-# файл для парсинга данных из групп в vk
+"""Parsing posts from VK
+
+post_parse(): parses number of posts from VK groups.
+number of posts is set beforehand in data_and_file_writer.py
+"""
 
 import requests
 import json
@@ -10,21 +14,20 @@ from data_and_file_writer import min_price, max_price, num_of_posts, file_writer
 links = ['https://vk.com/arenda_lugansk1', 'https://vk.com/nedvizhimost_souz', 'https://vk.com/nedvizhimost_lnr1']
 domains = [part.split('/')[-1] for part in links]
 
-
-# TODO: реализовать обработку постов с помощью regex для более точного парсинга
+# TODO: make text processing functions with regex
 
 
 def get_link(json_data, domain, num):
-        # функция для получения ссылки на отдельный пост
+        """Get a link to a specific post in VK."""
         post_id = json_data['response']['items'][num]['id']
         owner_id = json_data['response']['items'][num]['from_id']
         return f'https://vk.com/{domain}?w=wall{owner_id}_{post_id}'
 
 
 def post_parse():
-        # функция, которая парсит посты, обрабатывает их и записывает в файл
+        """Parsing, processing and saving count of posts."""
+        count = num_of_posts
         for domain in domains:
-                count = num_of_posts
                 r = requests.get('https://api.vk.com/method/wall.get',
                         params= {'domain':domain,
                                 'count':count,

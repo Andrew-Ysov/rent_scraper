@@ -1,11 +1,13 @@
-# файл, хранящий требования к предложениям аренды и работающий с файлом результатов
+"""File with specifications for searching.
+
+file_writer(data) writes all data (from VK and from site) in a single file.
+"""
 
 import csv
 
 min_price = 8000
 max_price = 25000
 num_of_posts = 20
-site_link = 'https://www.ligakvartir.ru/lugansk/snyat-nedvizhimost'
 file_name = 'offers.csv'
 
 

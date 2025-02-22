@@ -1,5 +1,4 @@
-# файл для парсинга данных с сайта ligakvartir.ru
-
+"""Parsing offers from site and saving data in a file"""
 import requests
 from bs4 import BeautifulSoup
 
@@ -9,12 +8,12 @@ from data_and_file_writer import min_price, max_price, file_writer
 LINK = 'https://www.ligakvartir.ru/lugansk/snyat-nedvizhimost'
 
 
-def site_parse(LINK):
-    # главная функция, созданная специально для парсинга сайта ligakvartir.ru
+def site_parse():
+    """main function for parsing ligakvartir.ru"""
     headings = ['цена', 'ссылка', 'адрес']
     file_writer(headings)
 
-    # опциональные хэдеры
+    # optional headers
     # st_accept = 'text/html'
     # st_useragent = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 12_3_1)' 
     #                 'AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15')
@@ -48,4 +47,4 @@ def site_parse(LINK):
 
 
 if __name__ == '__main__':
-    site_parse(LINK)
+    site_parse()
