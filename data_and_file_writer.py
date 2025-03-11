@@ -18,4 +18,5 @@ def file_writer(data):
 
 
 if __name__ == '__main__':
-        pass
+        test_data = ''
+        file_writer(test_data)
